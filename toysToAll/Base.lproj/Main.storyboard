@@ -141,6 +141,9 @@
                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Salvar"/>
+                                        <connections>
+                                            <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9jy-2P-ZmV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -149,6 +152,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Novo" largeTitleDisplayMode="never" id="SK3-cy-UdJ"/>
+                    <connections>
+                        <outlet property="buttonSave" destination="hvg-bR-1jt" id="gBK-WI-hdU"/>
+                        <outlet property="segmentedControlState" destination="NES-Ke-VH9" id="34y-cq-zyc"/>
+                        <outlet property="textFieldDonorName" destination="acK-aX-fXk" id="MNa-ks-I1x"/>
+                        <outlet property="textFieldName" destination="M64-Wr-9Xz" id="ehM-PS-bVz"/>
+                        <outlet property="textFieldPhone" destination="PFP-LD-hrI" id="5xl-Rn-POW"/>
+                        <outlet property="textViewAddress" destination="2qD-ms-U9c" id="WH9-1J-Lds"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
