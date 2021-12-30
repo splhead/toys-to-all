@@ -10,7 +10,7 @@ import Firebase
 
 class ToysTableViewController: UITableViewController {
     
-    let collection = "toys"
+    let collection = "Toys"
     var toys: [Toy] = []
     lazy var firestore: Firestore = {
         let settings = FirestoreSettings()
@@ -27,6 +27,13 @@ class ToysTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadToys()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let toyViewController = segue.destination as? ToyViewController,
+           let indexPath = tableView.indexPathForSelectedRow {
+            toyViewController.toy = toys[indexPath.row]
+        }
     }
     
     func loadToys() {
@@ -89,17 +96,17 @@ class ToysTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let toy = toys[indexPath.row]
+            
+            firestore.collection(collection).document(toy.id).delete()
+            
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

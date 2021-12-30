@@ -1,0 +1,6 @@
+framework module Pods_toysToAll {
+  umbrella header "Pods-toysToAll-umbrella.h"
+
+  export *
+  module * { export * }
+}
